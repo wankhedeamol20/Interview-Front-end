@@ -10,7 +10,11 @@ This exercise is to test your Front-end skills. In this repository you will find
 
 Installation should configure everything you would need to get started theming based on the PSDs.
 
-### Prerequisites
+### Important!!!
+
+- Please avoid using Bootstrap or similar CSS frameworks
+
+### Setup Prerequisites
 
 - [Node.js](https://nodejs.org/en/)
 - Browser: [Chrome](https://www.google.com/chrome/) or [Firefox](https://www.mozilla.org/en-US/firefox/new/)
