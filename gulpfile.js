@@ -61,12 +61,12 @@ gulp.task('browsersync', () => {
   });
   gulp.watch(
     ['src/sass/**/*.scss', 'src/js/*.js'],
-    ['build', browserSync.reload]
+    gulp.series('build', browserSync.reload)
   );
 });
 
-gulp.task('lint', ['stylelint', 'eslint']);
-gulp.task('build', ['twig', 'sass', 'babel']);
-gulp.task('server', ['browsersync']);
+gulp.task('lint', gulp.parallel('stylelint', 'eslint'));
+gulp.task('build', gulp.parallel('twig', 'sass', 'babel'));
+gulp.task('server', gulp.parallel('browsersync'));
 
-gulp.task('default', ['lint', 'build']);
+gulp.task('default', gulp.series('lint', 'build'));
