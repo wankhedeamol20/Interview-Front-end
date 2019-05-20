@@ -67,6 +67,6 @@ gulp.task('browsersync', () => {
 
 gulp.task('lint', gulp.parallel('stylelint', 'eslint'));
 gulp.task('build', gulp.parallel('twig', 'sass', 'babel'));
-gulp.task('server', gulp.parallel('browsersync'));
+gulp.task('server', gulp.series('build', gulp.parallel('browsersync')));
 
 gulp.task('default', gulp.series('lint', 'build'));
